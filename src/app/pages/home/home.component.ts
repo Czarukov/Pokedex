@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 import { PokemonService } from '../../services/pokemon.service';
-import { PokeButtonComponent } from '../../components/poke-button/poke-button.component';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatCardModule, PokeButtonComponent],
+  imports: [MatListModule, MatIconModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

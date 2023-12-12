@@ -3,3 +3,7 @@ mat-card {
   margin: 1rem;
   padding: 1rem;
 }
+button {
+  width: 10rem;
+  align-self: flex-end;
+}

@@ -15,4 +15,21 @@
     <mat-chip>{{ chip.type.name }}</mat-chip>
     }
   </mat-chip-listbox>
+  @if(pokemonService.isPokemonFavorite(pokemon.name)){
+  <button
+    mat-raised-button
+    color="warn"
+    (click)="pokemonService.removePokemonFromFav(pokemon.name)"
+  >
+    Unfavorite
+  </button>
+  } @else{
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="pokemonService.addPokemonToFav(pokemon.name)"
+  >
+    Favorite
+  </button>
+  }
 </mat-card>
