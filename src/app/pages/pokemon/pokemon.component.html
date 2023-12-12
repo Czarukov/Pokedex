@@ -1,3 +1,18 @@
 <mat-card>
-  <mat-card-header>Big Bro</mat-card-header>
+  <mat-card-header>
+    <h1>{{ pokemon.name }}</h1>
+  </mat-card-header>
+  <mat-card-content>#{{ pokemon.id }}</mat-card-content>
+  <img
+    mat-card-image
+    [src]="
+      pokemon.sprites.versions['generation-v']['black-white'].animated
+        .front_default
+    "
+  />
+  <mat-chip-listbox>
+    @for (chip of pokemon.types; track $index) {
+    <mat-chip>{{ chip.type.name }}</mat-chip>
+    }
+  </mat-chip-listbox>
 </mat-card>

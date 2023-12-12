@@ -77,3 +77,14 @@ interface Detail {
   name: string;
   url: string;
 }
+export interface ApiResponse {
+  count: number;
+  next: string;
+  previous?: any;
+  results: Array<PokemonInfo>;
+}
+
+export interface PokemonInfo {
+  name: string;
+  url: string;
+}

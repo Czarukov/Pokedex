@@ -1,3 +1,7 @@
-<ol>
-    
-</ol>
+<div class="projects">
+  @for (poke of pokemonService.pokemonList; track poke.name) {
+  <app-poke-button (click)="router.navigate(['pokemon', poke.name])"
+    >{{ poke.name }}
+  </app-poke-button>
+  }
+</div>
