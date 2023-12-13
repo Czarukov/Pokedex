@@ -1,10 +1,11 @@
 <mat-list>
   @for (poke of pokemonService.pokemonList; track poke.name) {
   <mat-list-item (click)="router.navigate(['pokemon', poke.name])">
-    {{ poke.name }}
-    @if(pokemonService.isPokemonFavorite(poke.name)){
-    <mat-icon fontIcon="favorite"> </mat-icon>
-    }
+    <span style="display: inline-flex; align-items: center; gap: 0.5rem">
+      {{ poke.name }} @if(pokemonService.isPokemonFavorite(poke.name)){
+      <mat-icon fontIcon="favorite" color="warn"> </mat-icon>
+      }
+    </span>
   </mat-list-item>
   }
 </mat-list>

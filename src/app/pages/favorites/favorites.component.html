@@ -1,5 +1,21 @@
-<div class="holder">
-  @if (pokemonService.favoritedPokemon.length > 0) { } @else {
-  <p>nothing to see here</p>
+<mat-list>
+  @if (pokemonService.favoritedPokemon.length > 0) { @for (poke of
+  pokemonService.favoritedPokemon; track poke) {
+  <mat-list-item>
+    <span style="display: inline-flex; align-items: center">
+      <button
+        mat-icon-button
+        (click)="pokemonService.removePokemonFromFav(poke)"
+      >
+        <mat-icon fontIcon="delete" color="warn"> </mat-icon>
+      </button>
+      <mat-card-header (click)="router.navigate(['pokemon', poke])">
+        {{ poke }}
+      </mat-card-header>
+    </span>
+  </mat-list-item>
+
+  } } @else {
+  <div>No favorited pokemon yet..</div>
   }
-</div>
+</mat-list>
